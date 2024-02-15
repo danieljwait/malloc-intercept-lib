@@ -3,14 +3,14 @@ Library to intercept all malloc calls, outputting the amount of bytes used so fa
 
 ## Build
 
-```
-$ make
+```bash
+make
 ```
 Produces the `malloc.so` shared object.
 
 ## Usage
 
-To intercept calls to `seq 1 5`, write
+```bash
+LD_PRELOAD=./malloc.so seq 1 5
 ```
-$ LD_PRELOAD=./malloc.so seq 1 5
-```
+Intercepts calls to `seq 1 5`
